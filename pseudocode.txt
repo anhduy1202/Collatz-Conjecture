@@ -1,0 +1,35 @@
+
+(front)                    (back)   
+[1,45,567,876,21,10,3,4,6677,2]
+
+MAIN PROGRAM
+Process command line args
+Create message queue (mq_open)
+Create producer thread (pthread_create)
+for max_threads (come from cmd args)
+  Create consumer thread (pthread_create)
+Wait for producer thread to be done
+while queue not empty
+  sleep(1)
+tell all consumer thread to stop (pthread_cancel)
+wait for consumer thread to be done
+for max_threads 
+  join consumer thread (pthread_join)
+
+
+PRODUCER THREAD
+for max_numbers
+  create a random number
+  put that number in our msg queue
+
+
+CONSUMER THREAD
+pop the front of the msg queue into var (mq_receive)
+If var is even 
+  divide by 2
+  push to the back (mq_send)
+Else if var = 1
+  print out number and steps
+Else
+  3 var + 1
+  push to the back of the msg queue (mq_send)
