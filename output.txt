@@ -1,0 +1,766 @@
+
+ 
+ max_threads: 2 
+ 
+min_rand: 1 
+ 
+max_rand: 10000 
+ 
+num in queue: 2 
+ 
+max steps: 100000 
+ 
+process duration: 120 
+ 
+Successfully open msg queue 
+ 
+Producer thread is created! 
+ 
+Consumer thread is created! 
+ 
+Consumer thread is created! 
+ 
+Putting message (id: 0, value: 9384 ) to message queue 
+ 
+Index: 0 
+ 
+Original number: 9384 
+ 
+Calculated number: 9384 
+ 
+Steps number: 0 
+ 
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 9384
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 4692
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 2346
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1173
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 3520
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1760
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 880
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 440
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 220
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 110
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 55
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 166
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 83
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 250
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 125
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 376
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 188
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 94
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 47
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 142
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 71
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 214
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 107
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 322
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 161
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 484
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 242
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 121
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 364
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 182
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 91
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 274
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 137
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 412
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 206
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 103
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 310
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 155
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 466
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 233
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 700
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 350
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 175
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 526
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 263
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 790
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 395
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1186
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 593
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1780
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 890
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 445
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1336
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 668
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 334
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 167
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 502
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 251
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 754
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 377
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1132
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 566
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 283
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 850
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 425
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1276
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 638
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 319
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 958
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 479
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1438
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 719
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 2158
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1079
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 3238
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1619
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 4858
+consumer complete
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 2429
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 7288
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 3644
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1822
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 911
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 2734
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1367
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 4102
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 2051
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 6154
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 3077
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 9232
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 4616
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 2308
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1154
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 577
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1732
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 866
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 433
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1300
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 650
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 325
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 976
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 488
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 244
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 122
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 61
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 184
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 92
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 46
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 23
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 70
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 35
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 106
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 53
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 160
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 80
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 40
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 20
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 10
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 5
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 16
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 8
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 4
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 2
+consumer complete
+Read 16 bytes from MQ
+Original number was 9384
+Calculated number was 1
+9384 -> 1 = 0 steps 
+ 
+consumer complete
+Successfully putting number to msg queue 
+ 
+Putting message (id: 1, value: 887 ) to message queue 
+ 
+Index: 1 
+ 
+Original number: 887 
+ 
+Calculated number: 887 
+ 
+Steps number: 0 
+ 
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 887
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 2662
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 1331
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 3994
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 1997
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 5992
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 2996
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 1498
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 749
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 2248
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 1124
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 562
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 281
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 844
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 422
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 211
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 634
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 317
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 952
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 476
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 238
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 119
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 358
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 179
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 538
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 269
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 808
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 404
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 202
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 101
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 304
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 152
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 76
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 38
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 19
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 58
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 29
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 88
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 44
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 22
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 11
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 34
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 17
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 52
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 26
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 13
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 40
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 20
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 10
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 5
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 16
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 8
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 4
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 2
+consumer complete
+Read 16 bytes from MQ
+Original number was 887
+Calculated number was 1
+887 -> 1 = 0 steps 
+ 
+consumer complete
+consumer complete
+Successfully putting number to msg queue 
+ 
+Done putting number in msg queue 
+ 
+Producer thread is joined! 
+ 

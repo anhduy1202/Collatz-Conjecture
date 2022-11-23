@@ -41,6 +41,7 @@ int main(int argc, char *argv[]) {
     if (!strcmp(argv[next_idx], "-h") || !strcmp(argv[next_idx], "--help")) {
       ++next_idx;
       help_menu();
+      exit(1);
     } else if (!strcmp(argv[next_idx], "-d")) {
       ++next_idx;
       debug = 1;
@@ -121,7 +122,7 @@ int main(int argc, char *argv[]) {
   for (int i = 0; i < max_threads; i++) {
     // Create consumer thread (pthread_create)
     int consumer_status =
-        pthread_create(consumer, NULL, (void *)process_msg, &message_queue);
+        pthread_create(&consumer[i], NULL, (void *)process_msg, &message_queue);
     if (consumer_status != 0) {
       printf("Error creating consumer thread \n \n");
       exit(1);
@@ -131,8 +132,48 @@ int main(int argc, char *argv[]) {
       }
     }
   }
-
-  int join_status = pthread_join(producer, NULL);
+  // Wait for producer thread to be done
+  int producer_join_status = pthread_join(producer, NULL);
+  if (producer_join_status != 0) {
+    printf("Error joining producer thread \n \n");
+    exit(1);
+  } else {
+    if (debug) {
+      printf("Producer thread is joined! \n \n");
+    }
+  }
+  // while queue not empty
+  // sleep (1)
+  struct mq_attr empty_queue_test;
+  mq_getattr(message_queue, &empty_queue_test);
+  while (empty_queue_test.mq_curmsgs) {
+    sleep(1);
+    mq_getattr(message_queue, &empty_queue_test);
+  }
+  // tell all consumer thread to stop (pthread_cancel)
+  for (int i = 0; i < max_threads; i++) {
+    int cancel_status = pthread_cancel(consumer[i]);
+    if (cancel_status != 0) {
+      printf("Error canceling thread \n \n");
+      exit(1);
+    } else {
+      if (debug) {
+        printf("Thread %d cancelled \n \n", i + 1);
+      }
+    }
+  }
+  // wait for consumer thread to be done
+  for (int i = 0; i < max_threads; i++) {
+    int consumer_join_status = pthread_join(consumer[i], NULL);
+    if (consumer_join_status != 0) {
+      printf("Error joining consumer thread \n \n");
+      exit(1);
+    } else {
+      if (debug) {
+        printf("Consumer thread %d is joined! \n \n", i + 1);
+      }
+    }
+  }
   int close_stat = mq_close(message_queue);
   mq_unlink(MESSAGE_QUEUE_NAME);
   return 0;
@@ -158,7 +199,8 @@ void fill_msg_queue(mqd_t *msq) {
       printf("Steps number: %d \n \n", buffer->number_of_steps);
     }
     // Send to msg queue
-    int status = mq_send(*msq, buffer, sizeof(MessageUnit), MESSAGE_PRIORITY);
+    int status =
+        mq_send(*msq, (void *)buffer, sizeof(MessageUnit), MESSAGE_PRIORITY);
     sleep(1);
     if (status == -1) {
       printf("Error putting number to msg queue \n \n");
@@ -170,22 +212,45 @@ void fill_msg_queue(mqd_t *msq) {
   }
   printf("Done putting number in msg queue \n \n");
 }
-void process_msg(mqd_t *msq) {
+
+void process_a_msg(mqd_t *msq) {
   /* Determine max. msg size; allocate buffer to receive msg */
   struct mq_attr attr;
   mq_getattr(*msq, &attr);
-  char *buffer = malloc(sizeof(MessageUnit));
+  MessageUnit *buffer = malloc(sizeof(MessageUnit));
   // pop the front of the msg queue into var (mq_receive)
-  unsigned nr = mq_receive(*msq, buffer, attr.mq_msgsize, NULL);
+  unsigned nr = mq_receive(*msq, (void *)buffer, attr.mq_msgsize, NULL);
   if (debug) {
-    printf("Read %ud bytes from MQ\n", nr);
-    printf("message was %d\n", *buffer);
+    printf("Read %u bytes from MQ\n", nr);
+    printf("Original number was %d\n", buffer->original_number);
+    printf("Calculated number was %d\n", buffer->calculated_number);
   }
   // CALCULATION
-
-  free(buffer);
-  printf("consumer complete\n");
+  if (buffer->calculated_number % 2 == 0) {
+    buffer->calculated_number /= 2;
+    buffer->number_of_steps += 1;
+    // push to the back of the msg queue (mq_send)
+    mq_send(*msq, (void *)buffer, sizeof(MessageUnit), MESSAGE_PRIORITY);
+    free(buffer);
+  } else if (buffer->calculated_number == 1) {
+    printf("\n%d -> 1 = %d steps \n \n", buffer->original_number,
+           buffer->number_of_steps);
+    free(buffer);
+  } else {
+    buffer->calculated_number = 3 * buffer->calculated_number + 1;
+    buffer->number_of_steps += 1;
+    // push to the back of the msg queue (mq_send)
+    mq_send(*msq, (void *)buffer, sizeof(MessageUnit), MESSAGE_PRIORITY);
+    free(buffer);
+  }
 }
+
+void process_msg(mqd_t *msq) {
+  while (1) {
+    process_a_msg(msq);
+  }
+}
+
 void help_menu() {
   printf("\nHelp menu \n \n"
          "-h --help: print this help \n \n"
