@@ -1,0 +1,121 @@
+#include <mqueue.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MESSAGE_PRIORITY 1
+#define MESSAGE_QUEUE_NAME "/queue_name"
+
+#define DEFAULT_NUMBER_OF_MESSAGES 5
+
+void produce_message(mqd_t *);
+void consume_message(mqd_t *);
+
+// these are set/adjusted from command line args
+int debug_on = 0;
+int capitalize_output = 0;
+int number_of_messages = DEFAULT_NUMBER_OF_MESSAGES;
+
+// ./main -n 5053 -d
+void help_message(void) { printf("I would output the help\n"); }
+
+int main(int argc, char *argv[]) {
+
+  // beginnning
+  int next_arg_ix = 1;
+  while (next_arg_ix < argc) {
+    if (argv[next_arg_ix][0] != '-') {
+      // we're done with everything that has a -, now on to positional param
+      break;
+    }
+    if (!strcmp(argv[next_arg_ix], "-d")) {
+      ++next_arg_ix;
+      debug_on = 1;
+    } else if (!strcmp(argv[next_arg_ix], "-n")) {
+      ++next_arg_ix;
+      number_of_messages = atoi(argv[next_arg_ix]);
+      ++next_arg_ix;
+    } else {
+      // unknown arg
+      printf("don't know %s\n", argv[next_arg_ix]);
+      help_message();
+      return 0;
+    }
+  }
+  // get positionals
+  int first_pos = argv[next_arg_ix];
+  int second_pos = argv[next_arg_ix + 1];
+  // end of this
+
+  // just for random numbers
+  time_t timey;
+  time(&timey);
+  srandom(timey);
+
+  pthread_t prod;
+  pthread_t consume;
+
+  // ya kinda need to do the attrib thing otherwise mq_open fails
+  struct mq_attr queue_attrib;
+  queue_attrib.mq_flags = 0;
+  queue_attrib.mq_maxmsg = 4;
+  queue_attrib.mq_msgsize = sizeof(int);
+  queue_attrib.mq_curmsgs = 0;
+
+  mqd_t message_queue = mq_open(MESSAGE_QUEUE_NAME, O_RDWR | O_CREAT |
+  O_EXCL,
+                                0644, &queue_attrib);
+
+  if (message_queue == (mqd_t)-1) {
+    fprintf(stderr, "Can't open message queue\n");
+    perror("mq_open");
+    exit(0);
+  }
+
+  int iret1 = pthread_create(&consume, NULL, consume_message,
+  &message_queue); int iret2 = pthread_create(&prod, NULL, produce_message,
+  &message_queue);
+
+  // and now we wait
+
+  pthread_join(consume, NULL);
+  pthread_join(prod, NULL);
+
+  mq_close(message_queue);
+
+  // this deletes the queue. If you don't do this, you can't run again.
+  mq_unlink(MESSAGE_QUEUE_NAME);
+
+  return 0;
+}
+
+void produce_message(mqd_t *messyq) {
+  struct mq_attr attr;
+  mq_getattr(*messyq, &attr);
+
+  int *buf = malloc(attr.mq_msgsize);
+
+  *buf = rand();
+  printf("sending %d\n", *buf);
+
+  int ret = mq_send(*messyq, buf, sizeof(int), MESSAGE_PRIORITY);
+
+  free(buf);
+
+  printf("producer complete\n");
+}
+
+void consume_message(mqd_t *messyq) {
+  /* Determine max. msg size; allocate buffer to receive msg */
+  struct mq_attr attr;
+  mq_getattr(*messyq, &attr);
+
+  int *buf = malloc(attr.mq_msgsize);
+
+  unsigned nr = mq_receive(*messyq, buf, attr.mq_msgsize, NULL);
+
+  printf("Read %zd bytes from MQ\n", nr);
+  printf("message was %d\n", *buf);
+  free(buf);
+  printf("consumer complete\n");
+}
