@@ -81,7 +81,7 @@ int main(int argc, char *argv[]) {
     }
   }
   if (debug) {
-    printf("\n \n max_threads: %d \n \n", max_threads);
+    printf("\n \nmax_threads: %d \n \n", max_threads);
     printf("min_rand: %d \n \n", min_rand);
     printf("max_rand: %d \n \n", max_rand);
     printf("num in queue: %d \n \n", num_in_queue);
