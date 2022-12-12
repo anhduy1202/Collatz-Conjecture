@@ -1,0 +1,7 @@
+1. Program displays help menu when -h or --help
+2. Verify that the program parse the args correctly
+3. Exit program and print help for invalid args
+4. Verify message queue open correctly + handle error if it occurs
+5. Verify that consumer and producer thread created and joined correctly
+6. Verify that the message get filled by producer thread before get calculated in consumer thread
+7. Verify that message is calculated correctly following Collatz Conjecture pattern and print out the step when finished
